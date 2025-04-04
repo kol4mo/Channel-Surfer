@@ -22,7 +22,14 @@ Players must complete each level to progress, hopping between wild and distinct 
 🔹 **HLSL / Shader Graph** – Custom shaders for unique level aesthetics.  
 🔹 **FMOD / Unity Audio Mixer** – Dynamic audio design for smooth transitions.  
 
-## 🎯 Development Status  
-🚧 **Work in Progress** – Targeting a four-week prototype deadline!  
+## 🖥️ Setup Instructions  
 
-📢 **Follow the project for updates!** 🚀  
+### 📌 Prerequisites  
+Ensure you have the following installed before setting up the project:  
+- **Unity 6000.0.26f1** (Download via Unity Hub)   
+
+### 📂 Installation Steps  
+1. **Clone the Repository**  
+   ```sh
+   git clone <repository-url>
+   cd TV-Channel-Hopper
