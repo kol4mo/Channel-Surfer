@@ -35,13 +35,13 @@ Ensure you have the following installed before setting up the project:
    cd Channel-Surfer
    
 2. **Open the Project in Unity**
-   Launch Unity Hub
-   Click "Open" and select the cloned project folder
-   Ensure Unity 6000.0.26f1 is selected
+ - Launch Unity Hub
+ - Click "Open" and select the cloned project folder
+ - Ensure Unity 6000.0.26f1 is selected
 
 3. **Run the Game**
-   Click Play in Unity Editor
-   Test different levels and shaders 🎮
+ - Click Play in Unity Editor
+ - Test different levels and shaders 🎮
 
 🎯 Development Status
 🚧 Work in Progress – Targeting a four-week prototype deadline!
