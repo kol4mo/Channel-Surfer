@@ -31,5 +31,5 @@ Ensure you have the following installed before setting up the project:
 ### 📂 Installation Steps  
 1. **Clone the Repository**  
    ```sh
-   git clone <repository-url>
+   git clone https://github.com/kol4mo/Channel-Surfer
    cd TV-Channel-Hopper
