@@ -9,7 +9,7 @@ public class TvButton : MonoBehaviour
     [SerializeField] Material ButtonMaterial;
     [SerializeField] MeshRenderer meshRenderer;
     [SerializeField] int materialIndex;
-    [SerializeField] UnityEvent<Loader.scenes> OnClick;
+    [SerializeField] UnityEvent OnClick;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
@@ -29,8 +29,7 @@ public class TvButton : MonoBehaviour
 		meshRenderer.SetMaterials(new List<Material> { meshRenderer.material, StaticMaterial });
 	}
 	private void OnMouseDown() {
-        OnClick.Invoke(Loader.scenes.MainMenu);
-
+        OnClick.Invoke();
 	}
 
 	//Mouse Hover

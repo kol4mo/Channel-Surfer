@@ -1,26 +1,35 @@
+using System;
 using System.Collections;
 
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public static class Loader {
-	private static scenes TargetScene;
+public class Loader : MonoBehaviour {
+	public static Loader Instance;
+	private string TargetScene;
 
+	[Serializable]
 	public enum scenes {
 		MainMenu,
 		Loading
 	}
 
-	public static UnityEvent<scenes> loadEvent;
+	private void Start() {
+		Instance = this;
+	}
 
-	public static void Load(scenes targetScene) {
-		Loader.TargetScene = targetScene;
+	public void LoadString(string targetScene) {
+		Loader.Instance.TargetScene = targetScene;
 
 		SceneManager.LoadScene(Loader.scenes.Loading.ToString());
 	}
 
-	public static void LoaderCallback() {
-		SceneManager.LoadScene(Loader.TargetScene.ToString());
+	public void Load(scenes targetScene) {
+		LoadString(targetScene.ToString());
+	}
+
+	public void LoaderCallback() {
+		SceneManager.LoadScene(Loader.Instance.TargetScene);
 	}
 }
