@@ -32,4 +32,8 @@ public class Loader : MonoBehaviour {
 	public void LoaderCallback() {
 		SceneManager.LoadScene(Loader.Instance.TargetScene);
 	}
+
+	public void Quit() {
+		Application.Quit();
+	}
 }
