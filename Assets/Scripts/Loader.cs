@@ -12,7 +12,8 @@ public class Loader : MonoBehaviour {
 	[Serializable]
 	public enum scenes {
 		MainMenu,
-		Loading
+		Loading,
+		LevelSelect
 	}
 
 	private void Start() {
