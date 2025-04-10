@@ -13,7 +13,8 @@ public class Loader : MonoBehaviour {
 	public enum scenes {
 		MainMenu,
 		Loading,
-		LevelSelect
+		LevelSelect,
+		WileNWild
 	}
 
 	private void Start() {
