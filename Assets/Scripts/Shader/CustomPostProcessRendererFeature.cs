@@ -30,7 +30,8 @@ public class CustomPostProcessRendererFeature : ScriptableRendererFeature
         }
     }
 
-    public override void SetupRenderPasses(ScriptableRenderer renderer, in RenderingData renderingData)
+	
+	public override void SetupRenderPasses(ScriptableRenderer renderer, in RenderingData renderingData)
     {
         if (renderingData.cameraData.cameraType == CameraType.Game)
         {
@@ -40,7 +41,7 @@ public class CustomPostProcessRendererFeature : ScriptableRendererFeature
         }
     }
 
-    public override void Create()
+	public override void Create()
     {
         m_bloomMaterial = CoreUtils.CreateEngineMaterial(m_bloomShader);
         m_compositeMaterial = CoreUtils.CreateEngineMaterial(m_compositeShader);

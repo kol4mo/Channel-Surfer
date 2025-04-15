@@ -19,7 +19,8 @@ public class MultiPassPass : ScriptableRenderPass
         this.renderPassEvent = RenderPassEvent.AfterRenderingOpaques-1;
     }
 
-    public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
+	[System.Obsolete]
+	public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
     {
         CommandBuffer cmd = CommandBufferPool.Get();
 

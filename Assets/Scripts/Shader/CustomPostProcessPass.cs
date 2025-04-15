@@ -14,8 +14,8 @@ public class CustomPostProcessPass : ScriptableRenderPass
     private CameraData m_CameraData;
     private Material m_BloomMaterial;
     private Material m_compositeMaterial;
-
-    private BenDayBloomEffectComponent m_BloomEffect;
+	[Obsolete]
+	private BenDayBloomEffectComponent m_BloomEffect;
 
     const int k_MaxPyramidSize = 16;
     private int[] _BloomMipUp;
@@ -26,8 +26,8 @@ public class CustomPostProcessPass : ScriptableRenderPass
     private RTHandle m_CameraColorTarget;
     private RTHandle m_CameraDepthTarget;
 
-
-    public CustomPostProcessPass(Material bloomMaterial, Material compositeMaterial)
+	[Obsolete]
+	public CustomPostProcessPass(Material bloomMaterial, Material compositeMaterial)
     {
         m_BloomMaterial = bloomMaterial;
         m_compositeMaterial = compositeMaterial;
@@ -62,7 +62,8 @@ public class CustomPostProcessPass : ScriptableRenderPass
         }
     }
 
-    public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData)
+	[Obsolete]
+	public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData)
     {
         ConfigureTarget(m_CameraColorTarget);
         m_Descriptor = renderingData.cameraData.cameraTargetDescriptor;
@@ -75,8 +76,8 @@ public class CustomPostProcessPass : ScriptableRenderPass
         m_CameraDepthTarget = cameraDepthTargetHandle;
     }
 
-    
-    public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
+	[Obsolete]
+	public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
     {
 
         VolumeStack stack = VolumeManager.instance.stack;
@@ -107,7 +108,8 @@ public class CustomPostProcessPass : ScriptableRenderPass
         CommandBufferPool.Release(cmd);
     }
 
-    private void SetupBloom(CommandBuffer cmd, RTHandle source)
+	[Obsolete]
+	private void SetupBloom(CommandBuffer cmd, RTHandle source)
     {
         // Start at half-res
         int downres = 1;

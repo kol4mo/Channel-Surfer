@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
 [Serializable, VolumeComponentMenuForRenderPipeline("Custom/Ben Day Bloom", typeof(UniversalRenderPipeline))]
+[Obsolete]
 public class BenDayBloomEffectComponent : VolumeComponent, IPostProcessComponent
 {
     [Header("Bloom Settings")]
