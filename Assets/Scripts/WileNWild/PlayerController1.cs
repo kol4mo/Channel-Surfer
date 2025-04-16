@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] float maxMoveSpeed = 8;
     [SerializeField] float jumpForce = 100;
     [SerializeField] float gravityForce = 10;
-
+    [SerializeField] playerGraphic1 graphics;
     bool grounded = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour {
         //playerObj.transform.Translate(Vector3.up * yInput * Time.deltaTime);
         if (MathF.Abs(rb.linearVelocity.x) < maxMoveSpeed) {
             rb.AddRelativeForce(Vector3.right * xInput * Time.deltaTime * moveAcceleration);
+            graphics.lookDirection(xInput);
         }
 
         if (Input.GetButtonDown("Jump") && grounded) {
