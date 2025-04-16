@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-	private void OnCollisionEnter(Collision collision) {
+	private void OnCollisionStay(Collision collision) {
         grounded = true;
 	}
 
