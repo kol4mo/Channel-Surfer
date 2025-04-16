@@ -1,17 +1,48 @@
+using System;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour {
+
+    [SerializeField] GameObject playerObj;
+    [SerializeField] Rigidbody rb;
+    [SerializeField] float moveAcceleration = 5000;
+    [SerializeField] float maxMoveSpeed = 8;
+    [SerializeField] float jumpForce = 100;
+    [SerializeField] float gravityForce = 10;
+
+    bool grounded = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(
-        Input.GetButton("Jump"));
+        float xInput = Input.GetAxisRaw("Horizontal");
+        float yInput = Input.GetAxisRaw("Vertical");
+
+        //playerObj.transform.Translate(Vector3.up * yInput * Time.deltaTime);
+        if (MathF.Abs(rb.linearVelocity.x) < maxMoveSpeed) {
+            rb.AddRelativeForce(Vector3.right * xInput * Time.deltaTime * moveAcceleration);
+        }
+
+        if (Input.GetButtonDown("Jump") && grounded) {
+            rb.AddRelativeForce(Vector3.up * jumpForce);
+        }
+
+        if (!grounded) {
+            rb.AddRelativeForce(Vector3.down * gravityForce * Time.deltaTime);
+        }
     }
+
+	private void OnCollisionEnter(Collision collision) {
+        grounded = true;
+	}
+
+	private void OnCollisionExit(Collision collision) {
+		grounded = false;
+	}
 }
