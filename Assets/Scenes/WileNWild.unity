@@ -2613,6 +2613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerObj: {fileID: 1178045878}
   rb: {fileID: 1178045881}
+  animator: {fileID: 1561849621}
   moveAcceleration: 5000
   maxMoveSpeed: 8
   jumpForce: 1500

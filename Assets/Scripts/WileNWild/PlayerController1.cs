@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour {
 
     [SerializeField] GameObject playerObj;
     [SerializeField] Rigidbody rb;
+    [SerializeField] Animator animator;
     [SerializeField] float moveAcceleration = 5000;
     [SerializeField] float maxMoveSpeed = 8;
     [SerializeField] float jumpForce = 100;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour {
         if (MathF.Abs(rb.linearVelocity.x) < maxMoveSpeed) {
             rb.AddRelativeForce(Vector3.right * xInput * Time.deltaTime * moveAcceleration);
             graphics.lookDirection(xInput);
+            animator.SetFloat("Speed", Math.Abs(xInput * 2));
         }
 
         if (Input.GetButtonDown("Jump") && grounded) {
