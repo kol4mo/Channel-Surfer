@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (Input.GetButtonDown("Jump") && grounded) {
+            animator.SetTrigger("Jump");
             rb.AddRelativeForce(Vector3.up * jumpForce);
         }
 
@@ -41,8 +42,13 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+	private void OnCollisionEnter(Collision collision) {
+		animator.SetBool("Land", true);
+	}
+
 	private void OnCollisionStay(Collision collision) {
         grounded = true;
+		animator.SetBool("Land", false);
 	}
 
 	private void OnCollisionExit(Collision collision) {
