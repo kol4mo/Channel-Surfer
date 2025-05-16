@@ -4,7 +4,8 @@ public class ShaderManager : MonoBehaviour
 {
     public enum ShaderSettings {
         Default,
-        Outline
+        Outline,
+        None
     }
 
     [SerializeField] ShaderSettings shader;
