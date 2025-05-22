@@ -18,7 +18,7 @@ public class Win1 : MonoBehaviour
     }
 
 	private void OnCollisionEnter(Collision collision) {
-        LevelManager.instance.setCurrentLevel(level);
+        LevelManager.Instance.setCurrentLevel(level);
         Loader.Instance.Load(Loader.scenes.LevelSelect);
 	}
 }
