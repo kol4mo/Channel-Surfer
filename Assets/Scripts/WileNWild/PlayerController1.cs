@@ -13,8 +13,10 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] playerGraphic1 graphics;
     bool grounded = true;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+	public static event EventHandler OnJump;
+
+	// Start is called once before the first execution of Update after the MonoBehaviour is created
+	void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
