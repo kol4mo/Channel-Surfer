@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetButtonDown("Jump") && grounded) {
             animator.SetTrigger("Jump");
+            OnJump?.Invoke(this, EventArgs.Empty);
             rb.AddRelativeForce(Vector3.up * jumpForce);
         }
 
