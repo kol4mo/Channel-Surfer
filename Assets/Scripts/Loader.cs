@@ -5,8 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class Loader : MonoBehaviour {
-	public static Loader Instance;
+public class Loader : Singleton<Loader> {
 	private string TargetScene;
 
 	[Serializable]
@@ -17,9 +16,7 @@ public class Loader : MonoBehaviour {
 		WileNWild
 	}
 
-	private void Start() {
-		Instance = this;
-	}
+	
 
 	public void LoadString(string targetScene) {
 		Loader.Instance.TargetScene = targetScene;
