@@ -182,6 +182,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2600208095375210542, guid: 3043078d9dd832349ad2dc42c011f6d4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 934419332}
+    - targetCorrespondingSourceObject: {fileID: 2600208095375210542, guid: 3043078d9dd832349ad2dc42c011f6d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 934419335}
   m_SourcePrefab: {fileID: 100100000, guid: 3043078d9dd832349ad2dc42c011f6d4, type: 3}
 --- !u!1 &934419330 stripped
 GameObject:
@@ -232,6 +235,46 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &934419335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934419330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c8a84cfc3665647851c15ba66e9406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boost: 3.5
+  positionLerpTime: 0.2
+  mouseSensitivityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 5
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 2.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rotationLerpTime: 0.01
+  invertY: 0
 --- !u!1 &1825667328
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +343,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 3.66
@@ -490,7 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f409c0abc9411a54a9b2fff16031658f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shader: 2
+  shader: 0
 --- !u!4 &2128726445
 Transform:
   m_ObjectHideFlags: 0
